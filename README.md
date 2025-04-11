@@ -31,4 +31,15 @@ huggingface download TIGER-Lab/general-reasoner-verifier-preview --local-dir <da
 
 # prepare backbone
 huggingface download Qwen/Qwen2.5-7B --local-dir <data_dir>/Qwen2.5-7B
+
+# train
+# modify the environment veriable in train_general_reasoner.sh
+# then
+
+ray start --head
+
+export HEAD_IP=0.0.0.0
+
+bash train_general_reasoner.sh
+
 ```
