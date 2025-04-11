@@ -1,4 +1,4 @@
-# General-Reasoner-Zero
+# General-Reasoner
 
 
 🪡 We introduce a novel framework incorporating generative model-based rewards within GRPO, demonstrating substantial improvements in generalization, robustness, and scalability relative to traditional binary rule-based rewards across diverse domains. 
