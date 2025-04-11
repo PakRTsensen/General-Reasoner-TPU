@@ -133,7 +133,7 @@ class RewardModelWorker(Worker):
 
             # Concatenate valid prompt and response tokens.
             sequence = torch.cat((valid_prompt_ids, response_ids[:valid_response_length]))
-            sequence_str = self.tokenizer.decode(sequence)
+            sequence_str = self.tokenizer.decode(sequence[-1024:]) # avoid risk of getting too long answer extracted
             sequence_strs.append(sequence_str)
 
             # Extract question and ground truth from non-tensor batch.
