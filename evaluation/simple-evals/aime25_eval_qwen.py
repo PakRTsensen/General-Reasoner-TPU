@@ -23,7 +23,7 @@ Please reason step by step, and put your final answer within \\boxed{}.
 """.strip()
 
 
-class AIMEEvalQwen(Eval):
+class AIME25EvalQwen(Eval):
     def __init__(
         self,
         equality_checker: SamplerBase,
@@ -31,7 +31,7 @@ class AIMEEvalQwen(Eval):
         n_repeats: int = 16,
         split: Literal["train"] = "train",
     ):
-        dataset = load_dataset("HuggingFaceH4/aime_2024", split='train')
+        dataset = load_dataset("yentinglin/aime_2025", 'default')['train']
         examples = [row for row in dataset]
         if num_examples:
             assert n_repeats == 1, "n_repeats only supported for num_examples = None"

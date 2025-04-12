@@ -3,7 +3,8 @@ import argparse
 import pandas as pd
 from . import common
 from .gpqa_eval_qwen import GPQAEvalQwen
-from .aime_eval_qwen import AIMEEvalQwen
+from .aime24_eval_qwen import AIME24EvalQwen
+from .aime25_eval_qwen import AIME25EvalQwen
 from .gsm8k_eval_qwen import Gsm8kEvalQwen
 from .minerva_eval_qwen import MinervaEvalQwen
 from .amc_eval_qwen import AmcEvalQwen
@@ -110,8 +111,13 @@ def main():
                     num_examples=num_examples,
                     n_repeats=1 if debug_mode else 1,
                 )
-            case "aime":
-                return AIMEEvalQwen(
+            case "aime24":
+                return AIME24EvalQwen(
+                    equality_checker=equality_checker,
+                    n_repeats=1 if debug_mode else 1, num_examples=num_examples
+                )
+            case "aime25":
+                return AIME25EvalQwen(
                     equality_checker=equality_checker,
                     n_repeats=1 if debug_mode else 1, num_examples=num_examples
                 )
@@ -144,7 +150,7 @@ def main():
 
     evals = {
         eval_name: get_evals(eval_name, args.debug)
-        for eval_name in ['amc', "math", "aime", "gsm8k", "minerva", "olympiad", "gpqa"]
+        for eval_name in ['aime25'] #['amc', "math", "aime24", "gsm8k", "minerva", "olympiad", "gpqa"]
     }
     print(evals)
     debug_suffix = "_DEBUG" if args.debug else ""
