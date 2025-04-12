@@ -10,11 +10,37 @@
 
 ---
 
+## Resources
+
+### Training Data
+
+|Data|Size|Link|
+|-|-|-|
+|general-reasoner-data-preview| 230k | [🤗](TIGER-Lab/general-reasoner-data-preview)|
+
+
+
+### Verifier
+
+|Model|Backbone|Link|
+|-|-|-|
+|general-reasoner-verifier-preview|Qwen/Qwen2.5-Math-1.5B|[🤗](https://huggingface.co/TIGER-Lab/general-reasoner-verifier-preview)|
+
+
+### Model Checkpoint
+
+|Model|Backbone|Link|
+|-|-|-|
+|General-Reasoner-7B-preview|Qwen2.5-7B|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-7B-preview)|
+|General-Reasoner-14B-preview|Qwen2.5-14B|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-14B-preview)|
+
+---
+
 ## Installation
 
 ```bash
-pip3 install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu124
-pip3 install flash-attn --no-build-isolation
+pip install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu124
+pip install flash-attn --no-build-isolation
 pip install -e ./verl
 pip install vllm==0.8.3
 pip install flashinfer-python
@@ -96,6 +122,10 @@ python -m evaluation.simple-evals.run_simple_evals_qwen \
 > By default, the model uses greedy decoding.
 > For AIME24 and AIME25, scores are averaged over 10 runs with temperature 1.
 > For more configuration details, refer to `evaluation/simple-evals/run_simple_evals_qwen.py`.
+
+
+---
+
 
 ## Acknowledgements
 
