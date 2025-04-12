@@ -1,4 +1,4 @@
-# General-Reasoner
+# General-Reasoner: Advancing LLM Reasoning Across All Domains
 
 
 🪡 We introduce a novel framework incorporating generative model-based rewards within GRPO, demonstrating substantial improvements in generalization, robustness, and scalability relative to traditional binary rule-based rewards across diverse domains. 
