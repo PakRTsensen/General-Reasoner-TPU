@@ -8,9 +8,11 @@
 ✅ Our method does not require any additional SFT.
 
 
-## Installation
+---
 
-```
+## 🔧 Installation
+
+```bash
 pip3 install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu124
 pip3 install flash-attn --no-build-isolation
 pip install -e ./verl
@@ -19,27 +21,45 @@ pip install flashinfer-python
 pip install math-verify
 ```
 
+---
 
-## Usage
+## 💠 Usage
 
-```
-# prepare data
+### 1. Prepare Data
+```bash
 python data_preprocess.py --local-dir <data_dir>/general-reasoner-data-preview
-
-# prepare verifier
-huggingface download TIGER-Lab/general-reasoner-verifier-preview --local-dir <data_dir>/general-reasoner-verifier-preview
-
-# prepare backbone
-huggingface download Qwen/Qwen2.5-7B --local-dir <data_dir>/Qwen2.5-7B
-
-# train
-# modify the environment veriable in train_general_reasoner.sh
-# then
-
-ray start --head
-
-export HEAD_IP=0.0.0.0
-
-bash train_general_reasoner.sh
-
 ```
+
+### 2. Download Verifier
+```bash
+huggingface-cli download TIGER-Lab/general-reasoner-verifier-preview --local-dir <data_dir>/general-reasoner-verifier-preview
+```
+
+### 3. Download Backbone Model
+```bash
+huggingface-cli download Qwen/Qwen2.5-7B --local-dir <data_dir>/Qwen2.5-7B
+```
+
+### 4. Configure Training Script
+Edit the environment variables in `train_general_reasoner.sh` to fit your system setup.
+
+### 5. Launch Ray Cluster
+```bash
+ray start --address <MASTER-NODE-IP>:6379
+```
+
+### 6. Start Training
+```bash
+bash train_general_reasoner.sh
+```
+
+---
+
+## 🙏 Acknowledgements
+
+This project is built upon the following open-source projects:
+
+- [VERL](https://github.com/volcengine/verl/tree/main/verl)  
+- [simpleRL-reason](https://github.com/hkust-nlp/simpleRL-reason)  
+- [simple-evals](https://github.com/openai/simple-evals)
+
