@@ -10,7 +10,7 @@
 
 ---
 
-## 🔧 Installation
+## Installation
 
 ```bash
 pip3 install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu124
@@ -23,7 +23,7 @@ pip install math-verify
 
 ---
 
-## 💠 Usage
+## Training
 
 ### 1. Prepare Data
 ```bash
@@ -55,7 +55,49 @@ bash train_general_reasoner.sh
 
 ---
 
-## 🙏 Acknowledgements
+## Evaluation
+
+### MMLU-PRO:
+
+```bash
+python -m evaluation.eval_mmlupro \
+    --model_path TIGER-Lab/General-Reasoner-14B-preview \
+    --output_file output-mmlupro-General-Reasoner-14B-preview.json
+```
+
+### SuperGPQA:
+
+```bash
+python -m evaluation.eval_supergpqa \
+    --model_path TIGER-Lab/General-Reasoner-14B-preview \
+    --output_file output-supergpqa-General-Reasoner-14B-preview.json
+```
+
+### Math-Related Tasks & GPQA
+We evaluate math and GPQA tasks using the `simple-eval` framework.
+For non-multiple choice questions, answer equivalence is verified using `GPT-4o`.
+
+#### 1. Configure OpenAI Key
+```bash
+export OPENAI_API_KEY=<replace by OPENAI API KEY>
+```
+
+#### 2. Serve the Model
+```bash
+vllm serve TIGER-Lab/General-Reasoner-14B-preview --tensor-parallel-size 4
+```
+
+#### 3. Run Evaluation
+```bash
+python -m evaluation.simple-evals.run_simple_evals_qwen \
+    --model General-Reasoner-14B-preview
+```
+
+> By default, the model uses greedy decoding.
+> For AIME24 and AIME25, scores are averaged over 10 runs with temperature 1.
+> For more configuration details, refer to `evaluation/simple-evals/run_simple_evals_qwen.py`.
+
+## Acknowledgements
 
 This project is built upon the following open-source projects:
 

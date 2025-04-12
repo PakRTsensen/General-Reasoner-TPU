@@ -150,7 +150,7 @@ def main():
 
     evals = {
         eval_name: get_evals(eval_name, args.debug)
-        for eval_name in ['aime25'] #['amc', "math", "aime24", "gsm8k", "minerva", "olympiad", "gpqa"]
+        for eval_name in ['amc', "math", "aime24", "aime25", "gsm8k", "minerva", "olympiad", "gpqa"]
     }
     print(evals)
     debug_suffix = "_DEBUG" if args.debug else ""
