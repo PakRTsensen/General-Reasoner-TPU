@@ -120,7 +120,7 @@ python -m evaluation.simple-evals.run_simple_evals_qwen \
 ```
 
 > By default, the model uses greedy decoding.
-> For AIME24 and AIME25, scores are averaged over 10 runs with temperature 1.
+> For AIME24 and AIME25, scores are averaged over 32 runs with temperature 1.
 > For more configuration details, refer to `evaluation/simple-evals/run_simple_evals_qwen.py`.
 
 
