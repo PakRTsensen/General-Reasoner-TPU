@@ -1,7 +1,7 @@
-# General-Reasoner: Advancing LLM Reasoning Across All Domains
+# General-Reasoner: Advancing LLM Reasoning Across All Domains (beyond Math)
 
 
-🪡 We introduce a novel framework incorporating generative model-based rewards within GRPO, demonstrating substantial improvements in generalization, robustness, and scalability relative to traditional binary rule-based rewards across diverse domains. 
+🪡 We introduce a novel framework within GRPO to utilize model-based verifier to support wider range of answer types. We train on WebInstruct-verfied, a dataset covering wide range of reasoning topics beyond math. We demonstrate substantial improvements over traditional binary rule-based rewards across diverse domains beyond math. 
 
 ✅ Model-based verifier to support verification of diverse answer types like math expression, string, list, fraction, matrix, etc;<br>
 ✅ Small 7B/14B models achieve robust cross-domain rewards; It boosts MMLU-Pro performance by 13%.<br>
