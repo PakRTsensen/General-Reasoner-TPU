@@ -9,11 +9,21 @@
 
 Check out our [technical report](https://github.com/TIGER-AI-Lab/General-Reasoner/blob/main/General_Reasoner.pdf) for the details!
 
+## Highlights
+
+Our experimental results are as follows:
 
 <p float="left">
   <img src="assets/7B.png" width="45%" />
   <img src="assets/14B.png" width="45%" />
 </p>
+
+Our discpline distribution is described as follows:
+
+<p float="left">
+  <img src="assets/distribution.png" width="65%" />
+</p>
+
 
 ---
 
