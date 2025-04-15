@@ -37,49 +37,55 @@ def main():
         "Qwen2.5-7B": QwenChatCompletionSampler(
             model="Qwen/Qwen2.5-7B",
             system_message=OPENAI_SYSTEM_MESSAGE_API,
-            temperature=0,
+            temperature=1,
             max_tokens=8192,
         ),
         "Qwen2.5-14B": QwenChatCompletionSampler(
             model="Qwen/Qwen2.5-14B",
             system_message=OPENAI_SYSTEM_MESSAGE_API,
-            temperature=0,
+            temperature=1,
             max_tokens=8192,
         ),
         "Qwen2.5-7B-Instruct": QwenChatCompletionSampler(
             model="Qwen/Qwen2.5-7B-Instruct",
             system_message=OPENAI_SYSTEM_MESSAGE_API,
-            temperature=0,
+            temperature=1,
             max_tokens=8192,
         ),
         "Qwen2.5-14B-Instruct": QwenChatCompletionSampler(
             model="Qwen/Qwen2.5-14B-Instruct",
             system_message=OPENAI_SYSTEM_MESSAGE_API,
-            temperature=0,
+            temperature=1,
             max_tokens=8192,
         ),
         "Qwen-2.5-7B-SimpleRL-Zoo": QwenChatCompletionSampler(
             model="hkust-nlp/Qwen-2.5-7B-SimpleRL-Zoo",
             system_message=OPENAI_SYSTEM_MESSAGE_API,
-            temperature=0,
+            temperature=1,
             max_tokens=8192,
         ),
         "Qwen-2.5-14B-SimpleRL-Zoo": QwenChatCompletionSampler(
             model="hkust-nlp/Qwen-2.5-14B-SimpleRL-Zoo",
             system_message=OPENAI_SYSTEM_MESSAGE_API,
-            temperature=0,
+            temperature=1,
             max_tokens=8192,
         ),
         "General-Reasoner-7B-preview": QwenChatCompletionSampler(
             model="TIGER-Lab/General-Reasoner-7B-preview",
             system_message=OPENAI_SYSTEM_MESSAGE_API,
-            temperature=0,
+            temperature=1,
+            max_tokens=8192,
+        ),
+        "General-Reasoner-7B-preview-step560": QwenChatCompletionSampler(
+            model="MrLight/scale-reasoning-data-v2-nos-fixmc-fil0-fil8-Qwen2.5-7B",
+            system_message=OPENAI_SYSTEM_MESSAGE_API,
+            temperature=1,
             max_tokens=8192,
         ),
         "General-Reasoner-14B-preview": QwenChatCompletionSampler(
             model="TIGER-Lab/General-Reasoner-14B-preview",
             system_message=OPENAI_SYSTEM_MESSAGE_API,
-            temperature=0,
+            temperature=1,
             max_tokens=8192,
         ),
     }
@@ -114,12 +120,12 @@ def main():
             case "aime24":
                 return AIME24EvalQwen(
                     equality_checker=equality_checker,
-                    n_repeats=1 if debug_mode else 1, num_examples=num_examples
+                    n_repeats=1 if debug_mode else 32, num_examples=num_examples
                 )
             case "aime25":
                 return AIME25EvalQwen(
                     equality_checker=equality_checker,
-                    n_repeats=1 if debug_mode else 1, num_examples=num_examples
+                    n_repeats=1 if debug_mode else 32, num_examples=num_examples
                 )
             case 'olympiad':
                 return OlympiadEvalQwen(
@@ -150,7 +156,7 @@ def main():
 
     evals = {
         eval_name: get_evals(eval_name, args.debug)
-        for eval_name in ['amc', "math", "aime24", "aime25", "gsm8k", "minerva", "olympiad", "gpqa"]
+        for eval_name in ["aime24", "aime25"]#['amc', "math", "aime24", "aime25", "gsm8k", "minerva", "olympiad", "gpqa"]
     }
     print(evals)
     debug_suffix = "_DEBUG" if args.debug else ""

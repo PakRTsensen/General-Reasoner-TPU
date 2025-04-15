@@ -9,8 +9,8 @@ import argparse
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset-name', default='TIGER-Lab/general-reasoner-data-preview')
-    parser.add_argument('--local-dir', default='~/general-reasoner-data-preview')
+    parser.add_argument('--dataset-name', default='TIGER-Lab/WebInstruct-verified')
+    parser.add_argument('--local-dir', default='~/webinstruct-verified')
 
     args = parser.parse_args()
 

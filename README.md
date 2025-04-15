@@ -4,9 +4,14 @@
 🪡 We introduce a novel framework incorporating generative model-based rewards within GRPO, demonstrating substantial improvements in generalization, robustness, and scalability relative to traditional binary rule-based rewards across diverse domains. 
 
 ✅ Model-based rewards outperform pattern-based binary verifications in less-structured domains;<br>
-✅ Small 14B models achieve robust cross-domain rewards; It boosts MMLU-Pro performance by 15%.<br>
+✅ Small 14B models achieve robust cross-domain rewards; It boosts MMLU-Pro performance by 13%.<br>
 ✅ Our method does not require any additional SFT.
 
+
+<p float="left">
+  <img src="assets/7B.png" width="45%" />
+  <img src="assets/14B.png" width="45%" />
+</p>
 
 ---
 
@@ -16,7 +21,7 @@
 
 |Data|Size|Link|
 |-|-|-|
-|general-reasoner-data-preview| 230k | [🤗](TIGER-Lab/general-reasoner-data-preview)|
+|WebInstruct-verified| 230k | [🤗](https://huggingface.co/datasets/TIGER-Lab/WebInstruct-verified)|
 
 
 
@@ -53,7 +58,7 @@ pip install math-verify
 
 ### 1. Prepare Data
 ```bash
-python data_preprocess.py --local-dir <data_dir>/general-reasoner-data-preview
+python data_preprocess.py --local-dir <data_dir>/webinstruct-verified
 ```
 
 ### 2. Download Verifier

@@ -32,7 +32,7 @@ def extract_solution(solution_str):
     else:
         model_output = solution_str
 
-    stop_words = ["</s>", "<|im_end|>", "<|endoftext|>"] 
+    stop_words = ["</s>", "<|im_end|>", "<|endoftext|>"]
     for stop_word in stop_words:
         if stop_word in model_output:
             model_output = model_output.split(stop_word)[0].strip()
@@ -72,6 +72,7 @@ if __name__ == "__main__":
     categories = ['computer science', 'math', 'chemistry', 'engineering', 'law', 'biology',
                   'health', 'physics', 'business', 'philosophy', 'economics', 'other',
                   'psychology', 'history']
+    # For each category store [correct_count, incorrect_count]
     per_category_accuracy = {c: [0, 0] for c in categories}
     success, fail = 0, 0
     answers = []
@@ -85,7 +86,7 @@ if __name__ == "__main__":
             query = entry['question'] + '\n' + form_options(entry['options']) + '\n'
             messages = [{
                 "role": "user",
-                "content": query + '\nPlease reason step by step, and put your final answer option within \\boxed{}. Only put the letter in the box, e.g. \\boxed{A}. There is only one correct answer.'
+                "content": query + '\nPlease reason step by step, and put your final answer option within \\boxed{}. Only put the option letter in the box, e.g. \\boxed{A}. There is only one correct answer.'
             }]
             prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
             prompts.append(prompt)
@@ -106,9 +107,37 @@ if __name__ == "__main__":
                 fail += 1
                 per_category_accuracy[category][1] += 1
             
-        print(f"{category}: {per_category_accuracy[category][0] / (per_category_accuracy[category][0] + per_category_accuracy[category][1]):.4f}")
+        # Print category accuracy as soon as it's computed
+        total_cat = per_category_accuracy[category][0] + per_category_accuracy[category][1]
+        cat_accuracy = per_category_accuracy[category][0] / total_cat if total_cat > 0 else 0.0
+        print(f"{category}: {cat_accuracy:.4f}")
     
+    # Save all the answers in a JSON file
     with open(args.output_file, 'w') as f:
         json.dump(answers, f, indent=2)
     
-    print("Overall Accuracy:", success / (success + fail))
+    # Calculate per-category report, micro average, and macro average
+    print("\n----- Accuracy Report -----")
+    category_accuracy_report = {}
+    for category in categories:
+        correct, incorrect = per_category_accuracy[category]
+        total = correct + incorrect
+        if total > 0:
+            accuracy = correct / total
+        else:
+            accuracy = 0.0
+        category_accuracy_report[category] = accuracy
+        print(f"{category}: {correct}/{total} -> {accuracy*100:.2f}% accuracy")
+        
+    # Micro average accuracy: overall correct over all predictions.
+    total_predictions = success + fail
+    micro_avg = success / total_predictions if total_predictions > 0 else 0.0
+    print(f"\nMicro Average Accuracy: {micro_avg*100:.2f}%")
+    
+    # Macro average accuracy: average of the per-category accuracies.
+    valid_categories = [cat for cat in categories if (per_category_accuracy[cat][0] + per_category_accuracy[cat][1] > 0)]
+    if valid_categories:
+        macro_avg = sum(category_accuracy_report[cat] for cat in valid_categories) / len(valid_categories)
+    else:
+        macro_avg = 0.0
+    print(f"Macro Average Accuracy: {macro_avg*100:.2f}%")
