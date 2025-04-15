@@ -4,7 +4,7 @@
 🪡 We introduce a novel framework incorporating generative model-based rewards within GRPO, demonstrating substantial improvements in generalization, robustness, and scalability relative to traditional binary rule-based rewards across diverse domains. 
 
 ✅ Model-based verifier to support verification of diverse answer types like math expression, string, list, fraction, matrix, etc;<br>
-✅ Small 14B models achieve robust cross-domain rewards; It boosts MMLU-Pro performance by 13%.<br>
+✅ Small 7B/14B models achieve robust cross-domain rewards; It boosts MMLU-Pro performance by 13%.<br>
 ✅ Our method does not require any additional SFT.
 
 Check out our [technical report](https://github.com/TIGER-AI-Lab/General-Reasoner/blob/main/General_Reasoner.pdf) for the details!
