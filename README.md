@@ -47,7 +47,7 @@ Our model-based verifier helps scaling the verifiable reasoning questions:
 
 |Model|Backbone|Link|
 |-|-|-|
-|general-verifier|Qwen/Qwen2.5-Math-1.5B|[🤗](https://huggingface.co/TIGER-Lab/general-verifier)|
+|General-Verifier|Qwen/Qwen2.5-Math-1.5B|[🤗](https://huggingface.co/TIGER-Lab/general-verifier)|
 
 
 ### Model Checkpoint
