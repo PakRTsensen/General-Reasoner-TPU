@@ -7,6 +7,8 @@
 ✅ Small 14B models achieve robust cross-domain rewards; It boosts MMLU-Pro performance by 13%.<br>
 ✅ Our method does not require any additional SFT.
 
+Check out our [technical report](https://github.com/TIGER-AI-Lab/General-Reasoner/blob/main/General_Reasoner.pdf) for the details!
+
 
 <p float="left">
   <img src="assets/7B.png" width="45%" />
