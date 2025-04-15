@@ -24,6 +24,12 @@ Our discpline distribution is described as follows:
   <img src="assets/distribution.png" width="65%" />
 </p>
 
+Our model-based verifier helps scaling the verifiable reasoning questions:
+
+<p float="left">
+  <img src="assets/verifier.png" width="65%" />
+</p>
+
 
 ---
 
