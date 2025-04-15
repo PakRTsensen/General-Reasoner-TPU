@@ -31,7 +31,7 @@ Check out our [technical report](https://github.com/TIGER-AI-Lab/General-Reasone
 
 |Model|Backbone|Link|
 |-|-|-|
-|general-reasoner-verifier-preview|Qwen/Qwen2.5-Math-1.5B|[🤗](https://huggingface.co/TIGER-Lab/general-reasoner-verifier-preview)|
+|general-verifier|Qwen/Qwen2.5-Math-1.5B|[🤗](https://huggingface.co/TIGER-Lab/general-verifier)|
 
 
 ### Model Checkpoint
