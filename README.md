@@ -65,7 +65,7 @@ python data_preprocess.py --local-dir <data_dir>/webinstruct-verified
 
 ### 2. Download Verifier
 ```bash
-huggingface-cli download TIGER-Lab/general-reasoner-verifier-preview --local-dir <data_dir>/general-reasoner-verifier-preview
+huggingface-cli download TIGER-Lab/general-verifier --local-dir <data_dir>/general-reasoner-verifier-preview
 ```
 
 ### 3. Download Backbone Model
