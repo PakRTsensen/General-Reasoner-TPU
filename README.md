@@ -49,6 +49,7 @@ Our model-based verifier helps scaling the verifiable reasoning questions:
 |-|-|-|
 |General-Verifier|Qwen/Qwen2.5-Math-1.5B|[🤗](https://huggingface.co/TIGER-Lab/general-verifier)|
 
+Check out HF page to learn how to use it. Feel free to plug this into your current RL-training framework. 
 
 ### Model Checkpoint
 
@@ -148,6 +149,37 @@ python -m evaluation.simple-evals.run_simple_evals_qwen \
 
 
 ---
+
+## Detailed Results
+
+Math-related results
+
+| Model Name                     | MATH-500 | Olympiad | Minerva | GSM8K | AMC  | AIME24x32 | AIME25x32 |
+|-------------------------------|----------|----------|---------|-------|------|-----------|-----------|
+| Qwen2.5-7B-Base               | 60.2     | 28.6     | 36.0    | 83.1  | 30.0 | 3.8       | 1.4       |
+| Qwen2.5-7B-Instruct           | 75.0     | 39.4     | 45.2    | 90.9  | 52.5 | 12.5      | 8.5       |
+| SimpleRL-Qwen2.5-7B-Zoo       | 74.0     | 41.9     | 49.6    | 90.7  | 60.0 | 15.2      | 7.5       |
+| General-Reasoner-7B           | 76.0     | 37.9     | 54.0    | 92.7  | 55.0 | 13.8      | 10.4      |
+|                               |          |          |         |       |      |           |           |
+| Qwen2.5-14B-Base              | 65.4     | 33.5     | 24.3    | 91.6  | 37.5 | 3.6       | 2.9       |
+| Qwen2.5-14B-Instruct          | 77.4     | 44.7     | 52.2    | 94.5  | 57.5 | 12.2      | 11.0      |
+| SimpleRL-Qwen2.5-14B-Zoo      | 77.2     | 44.6     | 54.0    | 94.2  | 60.0 | 12.9      | 11.8      |
+| General-Reasoner-14B          | 78.6     | 42.1     | 58.1    | 94.2  | 70.0 | 17.5      | 16.9      |
+
+General results
+
+| Model Name                    | MMLU-Pro | GPQA | SuperGPQA |
+|------------------------------|----------|------|-----------|
+| Qwen2.5-7B-Base              | 47.7     | 25.8 | 26.7      |
+| Qwen2.5-7B-Instruct          | 57.0     | 33.8 | 30.7      |
+| SimpleRL-Qwen2.5-7B-Zoo      | 51.5     | 24.2 | 29.9      |
+| **General-Reasoner-7B**      | **58.9** | **34.3** | **34.2** |
+|                              |          |      |           |
+| Qwen2.5-14B-Base             | 53.3     | 32.8 | 30.7      |
+| Qwen2.5-14B-Instruct         | 62.7     | 41.4 | 35.8      |
+| SimpleRL-Qwen2.5-14B-Zoo     | 64.0     | 39.4 | 35.7      |
+| **General-Reasoner-14B**     | **66.6** | **43.4** | **39.5** |
+
 
 
 ## Acknowledgements
