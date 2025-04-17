@@ -43,7 +43,7 @@ Our model-based verifier helps scaling the verifiable reasoning questions:
 
 
 
-### Verifier
+### General Verifier
 
 |Model|Backbone|Link|
 |-|-|-|
@@ -55,8 +55,8 @@ Check out HF page to learn how to use it. Feel free to plug this into your curre
 
 |Model|Backbone|Link|
 |-|-|-|
-|General-Reasoner-7B-preview|Qwen2.5-7B|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-7B-preview)|
-|General-Reasoner-14B-preview|Qwen2.5-14B|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-14B-preview)|
+|General-Reasoner-7B-preview|Qwen2.5-7B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-7B-preview)|
+|General-Reasoner-14B-preview|Qwen2.5-14B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-14B-preview)|
 
 ---
 
@@ -152,7 +152,9 @@ python -m evaluation.simple-evals.run_simple_evals_qwen \
 
 ## Detailed Results
 
-Math-related results
+Our 7B and 14B models are trained from the corresponding base qwen models.
+
+### Math-related results
 
 | Model Name                     | MATH-500 | Olympiad | Minerva | GSM8K | AMC  | AIME24x32 | AIME25x32 |
 |-------------------------------|----------|----------|---------|-------|------|-----------|-----------|
@@ -166,7 +168,7 @@ Math-related results
 | SimpleRL-Qwen2.5-14B-Zoo      | 77.2     | 44.6     | 54.0    | 94.2  | 60.0 | 12.9      | 11.8      |
 | **General-Reasoner-14B**          | 78.6     | 42.1     | 58.1    | 94.2  | 70.0 | 17.5      | 16.9      |
 
-General results
+### General results
 
 | Model Name                    | MMLU-Pro | GPQA | SuperGPQA |
 |------------------------------|----------|------|-----------|
