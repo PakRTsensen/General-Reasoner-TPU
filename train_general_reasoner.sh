@@ -181,6 +181,7 @@ HYDRA_FULL_ERROR=1 ray job submit --address=${HEAD_IP}:6379 \
     actor_rollout_ref.actor.kl_loss_coef=$KL_LOSS_COEF \
     actor_rollout_ref.actor.entropy_coeff=$ENTROPY_COEFFIENT \
     actor_rollout_ref.actor.clip_ratio=$CLIP_RATIO \
+    actor_rollout_ref.actor.clip_ratio_c=10 \
     actor_rollout_ref.actor.kl_loss_type=$KL_LOSS_TYPE \
     actor_rollout_ref.model.enable_gradient_checkpointing=True \
     actor_rollout_ref.actor.fsdp_config.param_offload=$ACTOR_PARAMETER_OFFLOAD \
