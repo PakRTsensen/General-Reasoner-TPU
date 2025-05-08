@@ -192,3 +192,14 @@ This project is built upon the following open-source projects:
 - [simpleRL-reason](https://github.com/hkust-nlp/simpleRL-reason)  
 - [simple-evals](https://github.com/openai/simple-evals)
 
+
+## Citation
+
+```tex
+@misc{generalreasoner,
+      title={General-Reasoner: Advancing LLM Reasoning Across All Domains},
+      author={Xueguang Ma and Qian Liu and Dongfu Jiang and Ge Zhang and Zejun Ma and Wenhu Chen},
+      year={2025},
+      howpublished={\url{https://github.com/TIGER-AI-Lab/General-Reasoner/blob/main/General_Reasoner.pdf}},
+}
+```
