@@ -7,7 +7,7 @@
 ✅ Small 7B/14B models achieve robust cross-domain rewards; It boosts MMLU-Pro performance by 13%.<br>
 ✅ Our method does not require any additional SFT.
 
-Check out our [technical report](https://github.com/TIGER-AI-Lab/General-Reasoner/blob/main/General_Reasoner.pdf) for the details!
+Check out our [Arxiv Paper](https://arxiv.org/abs/2505.14652) for the details!
 
 ## Highlights
 
@@ -55,9 +55,10 @@ Check out HF page to learn how to use it. Feel free to plug this into your curre
 
 |Model|Backbone|Link|
 |-|-|-|
-|General-Reasoner-7B-preview|Qwen2.5-7B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-7B-preview)|
-|General-Reasoner-14B-preview|Qwen2.5-14B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-14B-preview)|
-
+|General-Reasoner-7B|Qwen2.5-7B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-Qwen2.5-7B)|
+|General-Reasoner-14B|Qwen2.5-14B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-Qwen2.5-14B)|
+|General-Reasoner-Qw3-4B|Qwen2.5-7B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-Qwen3-4B)|
+|General-Reasoner-Qw3-14B|Qwen2.5-14B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-Qwen3-14B)|
 ---
 
 ## Installation
