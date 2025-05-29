@@ -57,7 +57,7 @@ Check out HF page to learn how to use it. Feel free to plug this into your curre
 |-|-|-|
 |General-Reasoner-Qwen2.5-7B|Qwen2.5-7B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-Qwen2.5-7B)|
 |General-Reasoner-Qwen2.5-14B|Qwen2.5-14B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-Qwen2.5-14B)|
-|General-Reasoner-Qwen3-4B|Qwen3-7B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-Qwen3-4B)|
+|General-Reasoner-Qwen3-4B|Qwen3-4B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-Qwen3-4B)|
 |General-Reasoner-Qwen3-14B|Qwen3-14B-Base|[🤗](https://huggingface.co/TIGER-Lab/General-Reasoner-Qwen3-14B)|
 ---
 
