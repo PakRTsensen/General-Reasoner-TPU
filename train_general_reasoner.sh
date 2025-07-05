@@ -6,14 +6,14 @@ export NCCL_DEBUG=DEBUG
 export RAY_BACKEND_LOG_LEVEL=debug
 export RAY_DEDUP_LOGS=1
 
-export PROJECT_NAME= # to be replaced
-export WANDB_API_KEY= # to be replaced
+export PROJECT_NAME="Rk1"# to be replaced
+export WANDB_API_KEY="38d8af9f6ee15b81af7b9b8c504d3a2468427c84"# to be replaced
 export WANDB_OFFICIAL=1
 # export VLLM_ATTENTION_BACKEND=XFORMERS
-export HDFS_DATA_PATH= # to be replaced
-export HDFS_MODEL_PATH= # to be replaced
-export HDFS_CHECKPOINT_PATH= # to be replaced
-export HDFS_LOG_PATH= # to be replaced
+export HDFS_DATA_PATH="/kaggle/temp/AceReason-1.1-SFT" # to be replaced
+export HDFS_MODEL_PATH="/kaggle/working/Magistral-Small-2506" # to be replaced
+export HDFS_CHECKPOINT_PATH="/kaggle/working/check/" # to be replaced
+export HDFS_LOG_PATH="/kaggle/working/logs" # to be replaced
 if [ -z "$RUN_NAME" ]; then
     RUN_NAME=general-reasoner
 fi
